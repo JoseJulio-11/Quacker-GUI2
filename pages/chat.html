@@ -28,15 +28,16 @@
                             <!-- Card Title is the person who write the message -->
                             <span class="card-title">{{m.uid}}</span>
                             <!-- Here comes the message text -->
+                            <h5>{{m.pseudonym}}</h5>
                             <p>
                                 {{m.text}}
                             </p>
                         </div>
                         <div class="card-action">
                             <a class="btn-floating btn-small waves-effect waves-light blue"><i class="material-icons">thumb_up
-                            </i></a> <span ng-bind= "m.cid">  </span>
+                            </i></a> <span ng-bind= "m.cid"></span><p>{{m.likes}}</p>
                             <a class="btn-floating btn-small waves-effect waves-light blue"><i class="material-icons">thumb_down
-                            </i></a><span ng-bind="m.cid">  </span>
+                            </i></a><span ng-bind="m.cid"></span><p>{{m.likes}}</p>
                         </div>
                     </div>
                 </div>

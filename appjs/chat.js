@@ -8,7 +8,7 @@ angular.module('AppChat').controller('ChatController', ['$http', '$log', '$scope
 
         this.loadMessages = function(){
 
-            var url = "http://localhost:5000/messages";
+            var url = "http://quacker-pr.herokuapp.com/messages";
 
             // Now set up the $http object
             // It has two function call backs, one for success and one for error
