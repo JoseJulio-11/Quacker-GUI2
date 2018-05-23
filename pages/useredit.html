@@ -1,0 +1,77 @@
+<div ng-cloak style="align-content: center">
+    <div class="row">
+      <div class="col s3"></div>
+        <div class="col s6 m6">
+            <div class="card">
+                <div class="card-content">
+                    <span class="card-title">User Profile</span>
+                    <form ng-submit="editInfo()">
+                        <h4 style="align-content: center">Username:</h4>
+                        <input type="text" placeholder="{userCtrl.pseudonym}" name='pseudonym' ng-model="userCtrl.pseudonym" required style="text-align: center; background-color: lightgrey"><br>
+                        <h4 style="align-content: center">First Name:</h4>
+                        <input type="text" placeholder="{userCtrl.firstname}" name='firstname' ng-model="userCtrl.firstname" required style="text-align: center; background-color: lightgrey"><br>
+                        <h4 style="align-content: center">Last Name:</h4>
+                        <input type="text" placeholder="{userCtrl.lastname}" name='lastname' ng-model="userCtrl.lastname" required style="text-align: center; background-color: lightgrey"><br>
+                        <h4 style="align-content: center">E-Mail:</h4>
+                        <input type="text" placeholder="{userCtrl.email}" name='email' ng-model="userCtrl.email" required style="text-align: center; background-color: lightgrey"><br>
+                        <h4 style="align-content: center">Username:</h4>
+                        <input type="text" placeholder="{userCtrl.username}" name='username' ng-model="userCtrl.username" required style="text-align: center; background-color: lightgrey"><br>
+                        <h4 style="align-content: center">Password:</h4>
+                        <input type="text" placeholder="{userCtrl.password}" name='password' ng-model="userCtrl.password" required style="text-align: center; background-color: lightgrey"><br>
+                        <h4 style="align-content: center">Username:</h4>
+                        <input type="text" placeholder="{userCtrl.}" name='username' ng-model="userCtrl.username" required style="text-align: center; background-color: lightgrey"><br>
+
+                            <input class="btn" type="submit" value="Sign in" style="border-radius: 10px">
+                        </form>
+                        <div class="card-action">
+                          <button class="btn" type="submit" style="border-radius: 10px" ng-click="signup()">Register</button>
+                        </div>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>First Name: {userCtrl.firstname}}</td>
+                                <input><
+                            </tr>
+                            <tr>
+                                <th>Last Name: </th>
+                                <th>{{userCtrl.lastname}}</th>
+                            </tr>
+                            <tr>
+                                <th>Phone Number: </th>
+                                <th>{{userCtrl.phone}}</th>
+                            </tr>
+                            <tr>
+                                <th>E-mail: </th>
+                                <th>{{userCtrl.email}}</th>
+                            </tr>
+                            <tr>
+                                <th>Username: </th>
+                                <th>{{userCtrl.username}}</th>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div>
+  <table>
+    <tr>
+      <th>Username</th>
+      <th>Full Name</th>
+      <th>Phone Number</th>
+      <th>Email</th>
+    </tr>
+    <tr ng-repeat="contact in userCtrl.contacts">
+        <td>{{contact.username}}</td>
+        <td>{{contact.firstname + " " + contact.lastname}}</td>
+        <td>{{contact.phone}}</td>
+        <td>{{contact.email}}</td>
+    </tr>
+  </table>
+</div>
+                <div class="card-action">
+                    <a href="#/JEChat/login">Exit</a>
+                </div>
+            </div>
+        </div>
+        <div class="col s3"></div>
+    </div>
+</div>
