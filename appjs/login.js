@@ -6,9 +6,9 @@ angular.module('AppChat').controller('ChatController', ['$http', '$log', '$scope
         this.counter  = 2;
         this.newText = "";
 
-        this.loadMessages = function(){
+        this.login = function(){
 
-            var url = "http://quacker-pr.herokuapp.com/messages";
+            var url = "http://quacker-pr.herokuapp.com//login/credentials";
 
             // Now set up the $http object
             // It has two function call backs, one for success and one for error
@@ -20,7 +20,7 @@ angular.module('AppChat').controller('ChatController', ['$http', '$log', '$scope
 
                     console.log("response: " + JSON.stringify(response));
 
-                    thisCtrl.messageList = response.data.Messages;
+                    thisCtrl.user = response.data;
 
             }, // error callback
             function (response){
@@ -48,7 +48,7 @@ angular.module('AppChat').controller('ChatController', ['$http', '$log', '$scope
             $log.error("Messages Loaded: ", JSON.stringify(thisCtrl.messageList));
         };
 
-        this.postMsg = function(){
+        this.signup = function(){
             var msg = thisCtrl.newText;
             // Need to figure out who I am
             var author = "Me";

@@ -4,43 +4,43 @@
         <div class="col s6 m5">
             <center><div class="card yellow darken-2" style="width: 100%; align-content: center">
                 <div class="card-content">
-                    <span class="card-title">Login</span>
+                    <span class="card-title"><h1>login</h1></span>
                         <form ng-submit="login()">
-                             <h4 style="align-content: center">Username:</h4><br>
+                             <h5 style="align-content: center">Username:</h5><br>
                             <input type="text" placeholder="Username" name='username' ng-model="loginForm.username" required style="text-align: center; background-color: lightgrey"><br>
 
-                             <h4 style="align-content: center">Password:</h4><br>
+                             <h5 style="align-content: center">Password:</h5><br>
                             <input type="password" placeholder="Password" name="password"  ng-model="loginForm.password"  required style="text-align: center; background-color: lightgrey"><br>
 
-                            <input class="btn blue darken-1" type="submit" value="Log in" style="border-radius: 10px">
+                            <input class="btn blue darken-1" type="submit" name="action" ng-click="loginForm.login()" style="border-radius: 10px">
                         </form>
                 </div>
                  <div class="card-content">
-                    <span class="card-title">Sign Up</span>
+                     <span class="card-title"><h1>Sign Up</h1></span>
                         <form ng-submit="signup()">
-                             <h4 style="align-content: center">Username:</h4><br>
-                            <input type="text" placeholder="Username" name='username' ng-model="signupForm.username" required style="text-align: center; background-color: lightgrey"><br>
+                             <h5 style="align-content: center">Username:</h5><br>
+                            <input type="text" placeholder="Username" name='username' ng-model="loginForm.username" required style="text-align: center; background-color: lightgrey"><br>
 
-                             <h4 style="align-content: center">Password:</h4><br>
-                            <input type="password" placeholder="Password" name="password"  ng-model="signupForm.password"  required style="text-align: center; background-color: lightgrey"><br>
+                             <h5 style="align-content: center">Password:</h5><br>
+                            <input type="password" placeholder="Password" name="password"  ng-model="loginForm.password"  required style="text-align: center; background-color: lightgrey"><br>
 
-                            <h4 style="align-content: center">Email:</h4><br>
-                            <input type="text" placeholder="Email" name='email' ng-model="signupForm.email" required style="text-align: center; background-color: lightgrey"><br>
+                            <h5 style="align-content: center">Email:</h5><br>
+                            <input type="text" placeholder="Email" name='email' ng-model="loginForm.email" required style="text-align: center; background-color: lightgrey"><br>
 
-                             <h4 style="align-content: center">Phone Number:</h4><br>
-                            <input type="text" placeholder="Phone Number" name="phone"  ng-model="signupForm.phone"  required style="text-align: center; background-color: lightgrey"><br>
+                             <h5 style="align-content: center">Phone Number:</h5><br>
+                            <input type="text" placeholder="Phone Number" name="phone"  ng-model="loginForm.phone"  required style="text-align: center; background-color: lightgrey"><br>
 
-                            <h4 style="align-content: center">Fist Name:</h4><br>
-                            <input type="text" placeholder="First Name" name="fname"  ng-model="signupForm.fname"  required style="text-align: center; background-color: lightgrey"><br>
+                            <h5 style="align-content: center">Fist Name:</h5><br>
+                            <input type="text" placeholder="First Name" name="fname"  ng-model="loginForm.fname"  required style="text-align: center; background-color: lightgrey"><br>
 
-                            <h4 style="align-content: center">Last Name:</h4><br>
-                            <input type="text" placeholder="Last Name" name='lname' ng-model="signupForm.lname" required style="text-align: center; background-color: lightgrey"><br>
+                            <h5 style="align-content: center">Last Name:</h5><br>
+                            <input type="text" placeholder="Last Name" name='lname' ng-model="loginForm.lname" required style="text-align: center; background-color: lightgrey"><br>
 
-                             <h4 style="align-content: center">Pseudonym:</h4><br>
-                            <input type="text" placeholder="Pseudonym" name="pseudonym"  ng-model="signupForm.pseudonym"  required style="text-align: center; background-color: lightgrey"><br>
+                             <h5 style="align-content: center">Pseudonym:</h5><br>
+                            <input type="text" placeholder="Pseudonym" name="pseudonym"  ng-model="loginForm.pseudonym"  required style="text-align: center; background-color: lightgrey"><br>
 
 
-                            <input class="btn blue darken-1" type="submit" value="Sign Up" style="border-radius: 10px">
+                            <input class="btn blue darken-1" type="submit" name="action" ng-click="loginForm.signup()" style="border-radius: 10px">
                         </form>
                 </div>
             </div></center>

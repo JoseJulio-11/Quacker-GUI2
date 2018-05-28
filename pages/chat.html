@@ -1,7 +1,7 @@
 <div ng-cloak style="align-content: center">
     <div class="row">
         <div class="col s12 m6">
-            <div class="card teal darken-1">
+            <div class="card yellow darken-2">
                 <div class="card-content ">
                     <i class="material-icons prefix" style="color: white">mode_edit</i> <span text-white style="font-size:larger; color:white">Message:</span>
                      <textarea style="background: white" id="textarea1" class="materialize-textarea" ng-model="chatCtrl.newText"></textarea>
@@ -16,8 +16,6 @@
 
     </div>
 
-    <!--<div  id="chat-list" style="height:300px;overflow:auto">-->
-    <div>
         <!-- Here come the messages in the chat, each one presented in card -->
         <div ng-repeat="m in chatCtrl.messageList">
             <!-- This card prodives space for the message and Like/dislike buttons -->
