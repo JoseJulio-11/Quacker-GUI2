@@ -1,5 +1,5 @@
-angular.module('AppChat').controller('LoginController', ['$http', '$log', '$scope', '$location',
-    function($http, $log, $scope, $location) {
+angular.module('AppChat').controller('LoginController', ['$http', '$log', '$scope', '$location', '$route',
+    function($http, $log, $scope, $location, $route) {
         var thisCtrl = this;
 
         $scope.loginForm = {};
@@ -24,8 +24,10 @@ angular.module('AppChat').controller('LoginController', ['$http', '$log', '$scop
                     $route.reload();
                 }
                 else {
-                    thisCtrl.user = response.data;
-                    $location.path('/chatlist');
+
+                    console.log("/chatlist/" + response.data.User[0]);
+                    $location.path("/chatlist/" + response.data.User[0].toString());
+                    console.log($location);
                 }
             }, // error callback
             function (response){

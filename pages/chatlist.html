@@ -1,4 +1,4 @@
-<div ng-cloak style="align-content: center">
+<div ng-cloak style="align-content: center; text-align: left">
     <!-- Here come the messages in the chat, each one presented in card -->
         <div ng-repeat="m in mainCtrl.chatList">
             <!-- This card prodives space for the message and Like/dislike buttons -->
@@ -7,14 +7,12 @@
                     <div class="card">
                         <div class="card-content">
                             <!-- Card Title is the person who write the message -->
-                            <span class="card-title">{{m.cid}}</span>
-                            <!-- Here comes the message text -->
-                            <h5><strong>{{m.cname}}</strong></h5>
-                            <p><strong>Created On:</strong>  {{m.ctime}}
+                            <span class="card-title"><strong>{{m.cName}}</strong></span>
+                            <p><strong>Created On:</strong>  {{m.cTime}}
                             </p>
                         </div>
                         <div class="card-action">
-                            <button class="btn waves-effect waves-light " type="submit" name="action" ng-click="mainCtrl.enterChat(m.cid)">Send
+                            <button class="btn waves-effect waves-light " type="submit" name="action" ng-click="goToChat(m.cID)">Enter
                             <i class="material-icons right">send</i>
                     </button>
                         </div>
@@ -22,5 +20,4 @@
                 </div>
             </div>
         </div>
-    </div>
 </div>

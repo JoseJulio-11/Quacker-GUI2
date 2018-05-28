@@ -7,11 +7,11 @@
             templateUrl: 'pages/login.html',
             controller: 'LoginController',
             controllerAs : 'loginForm'
-        }).when('/chat', {
+        }).when('/chat/:cid/:uid', {
             templateUrl: 'pages/chat.html',
             controller: 'ChatController',
             controllerAs : 'chatCtrl'
-        }).when('/chatlist', {
+        }).when('/chatlist/:uid', {
             templateUrl: 'pages/chatlist.html',
             controller: 'ChatListController',
             controllerAs : 'chatListCtrl'
