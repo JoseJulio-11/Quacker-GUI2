@@ -1,43 +1,26 @@
-<div class="row">
-  <div class="col s3"></div>
-    <div ng-cloak style="align-content: center" class="col s6">
-        <table class="center stripe">
-        <thead>
-        <tr>
-            <th></th>
-            <th>Chat Name</th>
-            <th>Date Created</th>
-        </tr>
-        </thead>
-        <tbody>
-            <tr ng-repeat="group in groupCtrl.groupchats">
-                <td>
-                    <a class="waves-effect  teal darken-1 btn-small" ng-click="groupCtrl.enterchat(group.cid)">Enter</a>
-                <td>{{group.cname}}</td>
-                <td>{{group.cdate}}</td>
-            </tr>
-        </tbody>
-        </table>
-        <div class="col s3"></div>
-
-        <div class="row">
-    <div class="col s12 m6">
-      <div class="card teal darken-1">
-        <div class="card-content white-text">
-          <span class="card-title"></span>
-          <form >
-            <tr>
-              <td>
-                <input type="text" placeholder="Group Name" name="newgroup" ng-model="namegroup" required style="border-radius: 10px; text-align: center; background-color: white">
-              </td>
-            </tr>
-            <div class="card-action" style="align-content: center; text-align: center">
-              <button class="waves-effect teal darken-1 btn-small" type="submit" ng-click="newgroup()">Add New Groupchat</button>
+<div ng-cloak style="align-content: center">
+    <!-- Here come the messages in the chat, each one presented in card -->
+        <div ng-repeat="m in mainCtrl.chatList">
+            <!-- This card prodives space for the message and Like/dislike buttons -->
+            <div class="row">
+                <div class="col s12 m6">
+                    <div class="card">
+                        <div class="card-content">
+                            <!-- Card Title is the person who write the message -->
+                            <span class="card-title">{{m.cid}}</span>
+                            <!-- Here comes the message text -->
+                            <h5><strong>{{m.cname}}</strong></h5>
+                            <p><strong>Created On:</strong>  {{m.ctime}}
+                            </p>
+                        </div>
+                        <div class="card-action">
+                            <button class="btn waves-effect waves-light " type="submit" name="action" ng-click="mainCtrl.enterChat(m.cid)">Send
+                            <i class="material-icons right">send</i>
+                    </button>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </form>
         </div>
-      </div>
     </div>
-  </div>
-</div>
 </div>

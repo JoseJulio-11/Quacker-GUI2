@@ -1,14 +1,12 @@
-angular.module('AppChat').controller('ChatController', ['$http', '$log', '$scope',
-    function($http, $log, $scope) {
+angular.module('AppChat').controller('ChatListController', ['$http', '$log', '$scope', '$location',
+    function($http, $log, $scope, $location) {
         var thisCtrl = this;
 
-        this.messageList = [];
-        this.counter  = 2;
-        this.newText = "";
+        $scope.mainCtrl = {};
 
-        this.loadMessages = function(){
+        this.loadChat = function(uid){
 
-            var url = "http://quacker-pr.herokuapp.com/messages";
+            var url = "http://quacker-pr.herokuapp.com/chats/user/" + uid;
 
             // Now set up the $http object
             // It has two function call backs, one for success and one for error
@@ -20,7 +18,7 @@ angular.module('AppChat').controller('ChatController', ['$http', '$log', '$scope
 
                     console.log("response: " + JSON.stringify(response));
 
-                    thisCtrl.messageList = response.data.Messages;
+                    $scope.chatList = response.data;
 
             }, // error callback
             function (response){
@@ -44,26 +42,105 @@ angular.module('AppChat').controller('ChatController', ['$http', '$log', '$scope
                     alert("Error interno del sistema.");
                 }
             });
-
-            $log.error("Messages Loaded: ", JSON.stringify(thisCtrl.messageList));
         };
 
-        this.postMsg = function(){
-            var msg = thisCtrl.newText;
-            // Need to figure out who I am
-            var author = "Me";
-            var nextId = thisCtrl.counter++;
-            thisCtrl.messageList.unshift({"id": nextId, "text" : msg, "author" : author, "like" : 0, "dislike" : 0});
-            thisCtrl.newText = "";
+
+        console.log("Got inside the js")
+
+        this.loadChat($scope.user.uid);
+
+        $scope.login = function(){
+            var form = $scope.loginForm
+            var url = "http://quacker-pr.herokuapp.com/login/credentials";
+            console.log("Got inside the function")
+
+            // Now set up the $http object
+            // It has two function call backs, one for success and one for error
+            $http.post(url, form).then(// success call back
+                function (response){
+                // The is the sucess function!
+                // Copy the list of parts in the data variable
+                // into the list of parts in the controller.
+                console.log("response: " + JSON.stringify(response));
+                if (response.data.hasOwnProperty('Error')) {
+                    alert("Wrong Username and password");
+                    $route.reload();
+                }
+                else {
+                    thisCtrl.user = response.data;
+                    $location.path('/chat');
+                }
+            }, // error callback
+            function (response){
+                // This is the error function
+                // If we get here, some error occurred.
+                // Verify which was the cause and show an alert.
+                var status = response.status;
+                console.log(status)
+                if (status == 0){
+                    alert("No hay conexion a Internet");
+                }
+                else if (status == 401){
+                    alert("Su sesion expiro. Conectese de nuevo.");
+                }
+                else if (status == 403){
+                    alert("No esta autorizado a usar el sistema.");
+                }
+                else if (status == 404){
+                    alert("No se encontro la informacion solicitada.");
+                }
+                else {
+                    alert("Error interno del sistema.");
+                }
+            });
         };
 
-        this.loadMessages();
+        $scope.signup = function(){
+            var form = $scope.loginForm
+            var url = "http://quacker-pr.herokuapp.com/users";
+            console.log("Got inside the function")
 
-        //this.likeMessage = function(mid){
-        //    var index = thisCtrl.messagesList.filterValues.indexOf(mid)
-        //    if(index != -1) {
-        //        this.messagesList[index].like = this.messagesList[index].like + 1;
-        //    }
-
-        //};
+            // Now set up the $http object
+            // It has two function call backs, one for success and one for error
+            $http.post(url, form).then(// success call back
+                function (response){
+                // The is the sucess function!
+                // Copy the list of parts in the data variable
+                // into the list of parts in the controller.
+                console.log("response: " + JSON.stringify(response));
+                if (response.data.hasOwnProperty('Error')) {
+                    alert("Something went wrong");
+                    $route.reload();
+                }
+                else {
+                    $scope.user = response.data;
+                    $location.path('/chat');
+                }
+            }, // error callback
+            function (response){
+                // This is the error function
+                // If we get here, some error occurred.
+                // Verify which was the cause and show an alert.
+                var status = response.status;
+                console.log(status)
+                if (status == 0){
+                    alert("No hay conexion a Internet");
+                }
+                else if (status == 401){
+                    alert("Su sesion expiro. Conectese de nuevo.");
+                }
+                else if (status == 403){
+                    alert("No esta autorizado a usar el sistema.");
+                }
+                else if (status == 404){
+                    alert("No se encontro la informacion solicitada.");
+                }
+                else if(status == 500){
+                    alert("Something wrong in api")
+                }
+                else {
+                    alert("Error interno del sistema.");
+                }
+            });
+        };
 }]);
