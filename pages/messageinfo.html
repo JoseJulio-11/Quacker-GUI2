@@ -1,10 +1,39 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
 
-</body>
-</html>
+<h1>People who Liked:</h1>
+<div ng-repeat="m in memCtrl.likeList">
+<!-- This card prodives space for the message and Like/dislike buttons -->
+<div class="row">
+    <div class="col s12 m6">
+        <div class="card">
+            <div class="card-content">
+                <!-- Card Title is the person who write the message -->
+                <span class="card-title"></span>
+                <!-- Here comes the message text -->
+                <h5><strong>First Name:</strong> {{m.fName}}<strong> Last Name: </strong>{{m.lName}}<strong> Pseudonym: </strong>{{m.pseudonym}}</h5>
+                
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+<h1>People who Disliked:</h1>
+<div ng-repeat="m in memCtrl.dislikeList">
+<!-- This card prodives space for the message and Like/dislike buttons -->
+<div class="row">
+    <div class="col s12 m6">
+        <div class="card">
+            <div class="card-content">
+                <!-- Card Title is the person who write the message -->
+                <span class="card-title"></span>
+                <!-- Here comes the message text -->
+                <h5><strong>First Name:</strong> {{m.fName}} <strong>Last Name:</strong> {{m.lName}} <strong>Pseudonym:</strong> {{m.pseudonym}}</h5>
+                
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+
+

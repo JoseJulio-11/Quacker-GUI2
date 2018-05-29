@@ -23,10 +23,14 @@
             templateUrl: 'pages/useredit.html',
             controller: 'UserEditController',
             controllerAs : 'userCtrl'
-        }).when('/messageinfo', {
+        }).when('/messageinfo/:mid', {
             templateUrl: 'pages/messageinfo.html',
             controller: 'MessageController',
             controllerAs : 'messageCtrl'
+        }).when('/participants/:uid', {
+            templateUrl: 'pages/participantsAdd.html',
+            controller: 'participantsController',
+            controllerAs : 'partCtrl'
         }).otherwise({
             redirectTo: '/login'
         });

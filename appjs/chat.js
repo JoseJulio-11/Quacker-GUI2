@@ -236,4 +236,8 @@ angular.module('AppChat').controller('ChatController', ['$http', '$log', '$scope
             }
         };
 
+        $scope.memInfo = function(mid){
+            console.log(mid);
+            $location.path("/messageinfo/" + mid);
+        };
 }]);
