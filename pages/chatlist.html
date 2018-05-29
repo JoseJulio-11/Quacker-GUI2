@@ -1,5 +1,23 @@
 <div ng-cloak style="align-content: center; text-align: left">
     <!-- Here come the messages in the chat, each one presented in card -->
+        <center><div class="card yellow darken-2" style="width: 40%; align-content: center">
+                <div class="card-content">
+                    <span class="card-title"><h4>Create Chat</h4></span>
+                        <form ng-submit="create()">
+                             <h5 style="align-content: center">Chat Name:</h5><br>
+                            <input type="text" placeholder="Username" name='username' ng-model="chatForm.cname" required style="text-align: center; background-color: lightgrey"><br>
+
+                             <h5 style="align-content: center">Group Chat: {{groupLabel}}</h5><br><br>
+                             <a class="btn waves-effect waves-light blue"  ng-click="group('YES')">Yes</a>
+                             <a class="btn waves-effect waves-light blue"  ng-click="group('NO')">No</a><br>
+                            
+                            <input class="btn blue darken-1" type="submit" value="Create Chat" style="border-radius: 10px"><br>
+                        </form>
+                </div>
+                 <a class="btn waves-effect waves-light green" ng-click="goToContact()"><i class="material-icons">face</i>Add Contact</a><br>
+        </div></center>
+
+        <h1>Chats Available:</h1>
         <div ng-repeat="m in mainCtrl.chatList">
             <!-- This card prodives space for the message and Like/dislike buttons -->
             <div class="row">
