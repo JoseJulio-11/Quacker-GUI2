@@ -31,6 +31,10 @@
             templateUrl: 'pages/participantsAdd.html',
             controller: 'participantsController',
             controllerAs : 'partCtrl'
+        }).when('/contacts/:uid', {
+            templateUrl: 'pages/contactsAdd.html',
+            controller: 'contactsController',
+            controllerAs : 'contCtrl'
         }).otherwise({
             redirectTo: '/login'
         });
