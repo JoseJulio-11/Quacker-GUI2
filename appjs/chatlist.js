@@ -4,7 +4,7 @@ angular.module('AppChat').controller('ChatListController', ['$http', '$log', '$s
 
         $scope.mainCtrl = {};
         $scope.chatForm = {};
-        $scope.isGroupChat = 'f';
+        $scope.isGroupChat = 't';
         $scope.groupLabel = "YES";
 
         $scope.loadChats = function(uid){

@@ -70,8 +70,7 @@ angular.module('AppChat').controller('LoginController', ['$http', '$log', '$scop
                     $route.reload();
                 }
                 else {
-                    $scope.user = response.data;
-                    $location.path("/chatlist/" + response.data.User[0]);
+                    $location.path("/chatlist/" + response.data.User.uID);
                 }
             }, // error callback
             function (response){
