@@ -85,6 +85,10 @@ angular.module('AppChat').controller('MessageController', ['$http', '$log', '$sc
             });
         };
 
+        $scope.goBack = function(){
+            $location.path("/chat/" + $routeParams.cid + "/" + $routeParams.uid);
+        };
+
         $scope.loadLikes($routeParams.mid);
         $scope.loadDislikes($routeParams.mid);
 

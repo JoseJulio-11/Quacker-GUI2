@@ -5,9 +5,9 @@
                     <span class="card-title"><h4>Create Chat</h4></span>
                         <form ng-submit="create()">
                              <h5 style="align-content: center">Chat Name:</h5><br>
-                            <input type="text" placeholder="Username" name='username' ng-model="chatForm.cname" required style="text-align: center; background-color: lightgrey"><br>
+                            <input type="text" placeholder="Chat Name" name='chat' ng-model="chatForm.cname" required style="text-align: center; background-color: white; color: darkgray"><br>
 
-                             <h5 style="align-content: center">Group Chat: {{groupLabel}}</h5><br>
+                             <h5 style="align-content: center">Group Chat? {{groupLabel}}</h5><br>
                              <span><a class="btn waves-effect waves-light blue"  style="font-size: 15px; color:white" ng-click="group('YES')">Yes</a>
                              <a class="btn waves-effect waves-light blue" style="font-size: 15px; color:white"  ng-click="group('NO')">No</a></span><br><br>
 
@@ -15,11 +15,12 @@
                             <input class="btn waves-effect waves-light blue darken-2" type="submit" style="width:100%; font-size:20px; color:white" value="Create Chat"><br>
                         </form>
                 </div>
-                 <a class="btn waves-effect waves-light green" style="font-size: 20px; color:white" ng-click="goToContacts()"><i class="material-icons">face</i>Add Contact</a><br>
+                 <a class="btn waves-effect waves-light green" style="font-size: 20px; color:white" ng-click="goToContacts()"><i class="material-icons">account_box</i>    Add Contact</a><br><br>
+                 <a class="btn waves-effect waves-light red" style="font-size: 20px; color:white; align-content: center" ng-click="logOut()"><i class="material-icons">cancel</i>    Sign Out</a><br>
         </div></center>
 
         <h1>Chats Available:</h1>
-        <div ng-repeat="m in mainCtrl.chatList">
+        <div ng-repeat="m in mainCtrl.chatList" style="width:50%">
             <!-- This card prodives space for the message and Like/dislike buttons -->
             <div class="row">
                 <div class="col s12 m6">
@@ -31,8 +32,8 @@
                             </p>
                         </div>
                         <div class="card-action">
-                            <button class="btn waves-effect waves-light " type="submit" name="action" ng-click="goToChat(m.cID)">Enter
-                            <i class="material-icons right">send</i>
+                            <button class="btn waves-effect waves-light " style="font-size: 25px" type="submit" name="action" ng-click="goToChat(m.cID)">Enter
+                            <i class="material-icons prefix">send</i>
                     </button>
                         </div>
                     </div>

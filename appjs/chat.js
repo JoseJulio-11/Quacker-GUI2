@@ -183,6 +183,15 @@ angular.module('AppChat').controller('ChatController', ['$http', '$log', '$scope
             $route.reload();
         };
 
+
+        $scope.goBack = function(){
+                $location.path("/chatlist/" + $routeParams.uid);
+        };
+
+        $scope.goToParticipants = function(){
+            $location.path("/participants/" + $routeParams.cid + "/" + $routeParams.uid);
+        };
+
         $scope.searchMsg = function(){
             var form = {"search" : $scope.chatCtrl.newText};
             console.log(form);
@@ -238,6 +247,6 @@ angular.module('AppChat').controller('ChatController', ['$http', '$log', '$scope
 
         $scope.memInfo = function(mid){
             console.log(mid);
-            $location.path("/messageinfo/" + mid);
+            $location.path("/messageinfo/" + $routeParams.cid + "/" + $routeParams.uid + "/" + mid);
         };
 }]);

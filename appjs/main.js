@@ -23,11 +23,11 @@
             templateUrl: 'pages/useredit.html',
             controller: 'UserEditController',
             controllerAs : 'userCtrl'
-        }).when('/messageinfo/:mid', {
+        }).when('/messageinfo/:cid/:uid/:mid', {
             templateUrl: 'pages/messageinfo.html',
             controller: 'MessageController',
             controllerAs : 'messageCtrl'
-        }).when('/participants/:uid', {
+        }).when('/participants/:cid/:uid', {
             templateUrl: 'pages/participantsAdd.html',
             controller: 'participantsController',
             controllerAs : 'partCtrl'

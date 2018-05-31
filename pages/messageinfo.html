@@ -1,50 +1,43 @@
 
-<h1>People who Liked:</h1>
-<div ng-repeat="m in memCtrl.likeList">
+
+
 <!-- This card prodives space for the message and Like/dislike buttons -->
 <div class="row">
     <div class="col s12 m6">
-        <div class="card yellow darken-2" style="width: 70%; align-content: center">
-            <div class="row">
-                <div class="col s12 m6">
-                    <div class="card" style="width: 100%; align-content: right">
-                        <div class="card-content">
-                            <!-- Card Title is the person who write the message -->
-                            <span class="card-title"></span>
-                            <!-- Here comes the message text -->
-                            <h5><strong>First Name:</strong> {{m.fName}}<strong> Last Name: </strong>{{m.lName}}<strong> Pseudonym: </strong>{{m.pseudonym}}</h5>
+        <div class="card yellow darken-2" style="width: 70%; align-content: center; font-size: 25px">
+            <a class="btn waves-effect waves-light red" style="font-size: 20px; color:white; align-content: center" ng-click="goBack()"><i class="material-icons">arrow_back</i>    Return to Chat</a><br>
+            <h3 style="color:white">Participants Who Liked:</h3>
+            <div ng-repeat="m in memCtrl.likeList">
+                <div class="row">
+                    <div class="col s12 m6">
+                        <div class="card" style="width: 100%; align-content: right">
+                            <div class="card-content">
+                                <!-- Card Title is the person who write the message -->
+                                <span class="card-title"></span>
+                                <!-- Here comes the message text -->
+                                <h5><strong>Full Name:</strong> {{m.fName}} {{m.lName}}<br><strong> Pseudonym: </strong>{{m.pseudonym}}<br><strong> Date of Reaction: </strong>{{m.rtime}}</h5>
                             
+                            </div>
                         </div>
+                    </div>
+                </div>
+            </div>
+            <h3 style="color:white">Participants Who Disliked:</h3>
+            <div ng-repeat="m in memCtrl.dislikeList">
+                <div class="row">
+                    <div class="col s12 m6">
+                        <div class="card" style="width: 100%; align-content: right">
+                            <div class="card-content">
+                                <!-- Card Title is the person who write the message -->
+                                <span class="card-title"></span>
+                                <!-- Here comes the message text -->
+                                <h5><strong>Full Name:</strong> {{m.fName}} {{m.lName}}<br> <strong>Pseudonym:</strong> {{m.pseudonym}} <br><strong> Date of Reaction: </strong>{{m.rtime}}</h5>
+                            </div>
+                        </div>          
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
-</div>
-
-<h1>People who Disliked:</h1>
-<div ng-repeat="m in memCtrl.dislikeList">
-<!-- This card prodives space for the message and Like/dislike buttons -->
-<div class="row">
-    <div class="col s12 m6">
-        <div class="card yellow darken-2" style="width: 70%; align-content: center">
-            <div class="row">
-                <div class="col s12 m6">
-                    <div class="card" style="width: 100%; align-content: right">
-                        <div class="card-content">
-                            <!-- Card Title is the person who write the message -->
-                            <span class="card-title"></span>
-                            <!-- Here comes the message text -->
-                            <h5><strong>First Name:</strong> {{m.fName}} <strong>Last Name:</strong> {{m.lName}} <strong>Pseudonym:</strong> {{m.pseudonym}}</h5>
-                        </div>
-                  </div>          
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-</div>
-
-
 

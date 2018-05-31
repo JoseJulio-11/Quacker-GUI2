@@ -52,6 +52,10 @@ angular.module('AppChat').controller('ChatListController', ['$http', '$log', '$s
             $location.path("/contacts/" + $routeParams.uid);
         };
 
+        $scope.logOut = function(){
+            $location.path("/login");
+        };
+
         $scope.goToChat = function(cid){
             console.log(cid);
             $location.path("/chat/" + cid + "/" + $routeParams.uid);
